@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
                     if (activePlayer == 1) {
 
-                        winner = "Arrow";
+                        winner = "Arrow(Varun)";
 
                     } else {
 
-                        winner = "Heart";
+                        winner = "Heart(Varun)";
 
                     }
 
@@ -82,6 +82,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+            boolean check_not_draw = true;
+            for(int i=0; i<gameState.length; i++){
+                if(gameState[i] == 2){
+                    check_not_draw = false;
+                }
+            }
+
+            if(check_not_draw){
+                Button playAgainButton = (Button) findViewById(R.id.playAgainButton);
+                playAgainButton.setVisibility(View.VISIBLE);
+            }
         }
 
     }
@@ -96,20 +107,40 @@ public class MainActivity extends AppCompatActivity {
 
         winnerTextView.setVisibility(View.INVISIBLE);
 
-        GridLayout gridLayout = (GridLayout) findViewById(R.id.gridLayout);
+//        GridLayout gridLayout = (GridLayout) findViewById(R.id.gridLayout);
 
-        for(int i=0; i<gridLayout.getChildCount(); i++){
+        ImageView imageView1 = findViewById(R.id.imageView1);
+        ImageView imageView2 = findViewById(R.id.imageView2);
+        ImageView imageView3 = findViewById(R.id.imageView3);
+        ImageView imageView4 = findViewById(R.id.imageView4);
+        ImageView imageView5 = findViewById(R.id.imageView5);
+        ImageView imageView6 = findViewById(R.id.imageView6);
+        ImageView imageView7 = findViewById(R.id.imageView7);
+        ImageView imageView8 = findViewById(R.id.imageView8);
+        ImageView imageView9 = findViewById(R.id.imageView9);
 
-            ImageView counter = (ImageView) gridLayout.getChildAt(i);
+        imageView1.setImageDrawable(null);
+        imageView2.setImageDrawable(null);
+        imageView3.setImageDrawable(null);
+        imageView4.setImageDrawable(null);
+        imageView5.setImageDrawable(null);
+        imageView6.setImageDrawable(null);
+        imageView7.setImageDrawable(null);
+        imageView8.setImageDrawable(null);
+        imageView9.setImageDrawable(null);
 
-            counter.setImageDrawable(null);
 
-        }
+//        for(int i=0; i<gridLayout.getChildCount(); i++){
+//
+//            ImageView counter = (ImageView) gridLayout.getChildAt(i);
+//
+//            counter.setImageDrawable(null);
+//
+//        }
 
         for(int i=0; i<gameState.length; i++){
 
             gameState[i] = 2;
-
         }
 
         activePlayer = 0;
