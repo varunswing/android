@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
             String[] splitResult = result.split("<div class=\"list-consumption\">");
 
-            Pattern p = Pattern.compile("img src=\'(.*?)\"");
+            Pattern p = Pattern.compile("img src=\"(.*?)\"");
             Matcher m = p.matcher(splitResult[0]);
 
             while(m.find()){
