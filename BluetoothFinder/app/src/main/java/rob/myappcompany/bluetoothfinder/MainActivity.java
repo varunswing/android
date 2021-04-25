@@ -1,4 +1,4 @@
-package rob.myappcompany.bluetoothfinder;
+ package rob.myappcompany.bluetoothfinder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
